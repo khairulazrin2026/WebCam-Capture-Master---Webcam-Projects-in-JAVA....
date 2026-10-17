@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.github.sarxos</groupId>
+    <artifactId>webcam-capture-examples</artifactId>
+    <version>0.4-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>webcam-capture-example-javafx</artifactId>
+  <packaging>jar</packaging>
+
+  <name>Webcam Capture - JavaFX Example</name>
+  <description>Example demonstrating how to use Webcam Capture API inside JavaFX
+		application without FXML. For the FXML support check other example.</description>
+
+  <properties>
+    <javafx-maven-plugin-version>0.0.8</javafx-maven-plugin-version>
+    <javafxVersion>18.0.1</javafxVersion>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.github.sarxos</groupId>
+      <artifactId>webcam-capture</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-controls</artifactId>
+      <version>${javafxVersion}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-swing</artifactId>
+      <version>${javafxVersion}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>WebCamAppLauncher</finalName>
+    <plugins>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>25</source>
+          <target>25</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-maven-plugin</artifactId>
+        <version>${javafx-maven-plugin-version}</version>
+        <configuration>
+          <mainClass>WebCamAppLauncher</mainClass>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
